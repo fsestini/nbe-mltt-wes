@@ -39,7 +39,7 @@ mutual
   data Nfs : Subst → Set where
     nfsId : Nfs Id
     nfsCons : ∀{σ a} → Nfs σ → Nf a → Nfs (σ , a)
-    nfsUp   : ∀{σ} → Nfs σ → Nfs (σ · ↑)
+    nfsUp   : ∀{n} → Nfs (wks n)
 
   data Nf : Term → Set where
     nfNe : ∀{e} → Ne e → Nf e
@@ -186,7 +186,7 @@ mutual
 
   Env-is-Nfs : ∀{n} → (e : Env) → Nfs (reifyEnv n e)
   Env-is-Nfs {zero} ε = nfsId
-  Env-is-Nfs {suc n} ε = nfsUp (Env-is-Nfs ε)
+  Env-is-Nfs {suc n} ε = nfsUp
   Env-is-Nfs (e , x) = nfsCons (Env-is-Nfs e) (D-is-Nf x)
 
 swap-ev : ∀{t σ ρ a ρ'} → ⟦ t [ σ ]ₛ ⟧ ρ ↘ a → ⟦ σ ⟧ₛ ρ ↘ ρ' → ⟦ t ⟧ ρ' ↘ a
