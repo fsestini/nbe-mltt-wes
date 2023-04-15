@@ -14,7 +14,6 @@ open import Data.Sum hiding ([_,_])
 open import Relation.Binary.PropositionalEquality hiding ([_])
 open import Relation.Nullary
 open import Syntax.Typed
-open import Size
 
 open SemTy
 open ⟦_⟧≃⟦_⟧_∈ₜ_

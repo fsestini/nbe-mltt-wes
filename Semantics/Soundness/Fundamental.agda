@@ -12,7 +12,6 @@ open import Semantics.Completeness.Lemmata
 
 open import Data.Product renaming (_,_ to _,,_)
 open import Syntax.Typed
-open import Size
 open import Relation.Binary.PropositionalEquality hiding ([_])
 open import Data.Nat
 

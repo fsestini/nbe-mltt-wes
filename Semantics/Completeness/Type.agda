@@ -6,7 +6,7 @@ open import Semantics.Domain
 open import Data.Unit
 open import Data.Empty
 open import Data.Nat
-open import Data.Product renaming (_,_ to _,,_) hiding (,_)
+open import Data.Product renaming (_,_ to _,,_)
 open import Data.Maybe
 open import Relation.Binary.PropositionalEquality hiding ([_])
 
